@@ -1,0 +1,268 @@
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.scoreSection {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.scoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.score, .highScore {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.8),
+    0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.highScore {
+  color: #ff6b6b;
+  text-shadow: 
+    0 0 10px rgba(255, 107, 107, 0.8),
+    0 0 20px rgba(255, 107, 107, 0.4);
+}
+
+.levelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.level {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 8px rgba(255, 107, 107, 0.8),
+    0 0 15px rgba(255, 107, 107, 0.4);
+}
+
+.healthBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.healthLabel {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 8px rgba(0, 255, 255, 0.8),
+    0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.healthContainer {
+  width: 80px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.healthFill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 3px;
+  box-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+  animation: healthPulse 2s infinite;
+}
+
+@keyframes healthPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.healthText {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 8px rgba(0, 255, 255, 0.8),
+    0 0 15px rgba(0, 255, 255, 0.4);
+  min-width: 30px;
+  text-align: right;
+}
+
+.levelProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.levelProgressLabel {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 8px rgba(255, 107, 107, 0.8),
+    0 0 15px rgba(255, 107, 107, 0.4);
+}
+
+.levelProgressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.levelProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b6b 0%, #ff8e8e 50%, #ffb3b3 100%);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  box-shadow: 
+    0 0 10px rgba(255, 107, 107, 0.8),
+    0 0 20px rgba(255, 107, 107, 0.4);
+  animation: progressGlow 2s infinite;
+}
+
+@keyframes progressGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.newHighScore {
+  color: #ffff00;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 15px rgba(255, 255, 0, 1),
+    0 0 30px rgba(255, 255, 0, 0.6);
+  background: rgba(255, 255, 0, 0.15);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 0, 0.6);
+  backdrop-filter: blur(10px);
+  animation: pulse 1s infinite;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+  }
+}
+
+
+.statusSection {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.statusSection h4 {
+  color: #00ffff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.8),
+    0 0 20px rgba(0, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.statusItem {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  backdrop-filter: blur(10px);
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .scoreRow, .levelRow {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .healthBar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .healthContainer {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .score, .highScore {
+    font-size: 0.9rem;
+  }
+
+  .level {
+    font-size: 0.8rem;
+  }
+
+  .healthLabel {
+    font-size: 0.75rem;
+  }
+
+  .healthContainer {
+    width: 80px;
+    height: 6px;
+  }
+
+  .healthText {
+    font-size: 0.75rem;
+  }
+
+  .statusItem {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+}
